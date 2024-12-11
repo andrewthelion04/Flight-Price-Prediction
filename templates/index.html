@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predicție Preț Zboruri</title>
+</head>
+<body>
+    <h1>Predicție Preț Zboruri</h1>
+    <form method="POST" action="/predict">
+        <label for="airline">Companie:</label>
+        <input type="text" name="airline" required><br>
+        
+        <label for="date_of_journey">Data plecării:</label>
+        <input type="date" name="date_of_journey" required><br>
+
+        <label for="source">Sursă:</label>
+        <input type="text" name="source" required><br>
+
+        <label for="destination">Destinație:</label>
+        <input type="text" name="destination" required><br>
+
+        <label for="total_stops">Opriri:</label>
+        <input type="text" name="total_stops" required><br>
+
+        <label for="dep_time">Ora plecării:</label>
+        <input type="time" name="dep_time" required><br>
+
+        <label for="duration_hours">Durată (ore):</label>
+        <input type="number" name="duration_hours" required><br>
+
+        <label for="duration_minutes">Durată (minute):</label>
+        <input type="number" name="duration_minutes" required><br>
+
+        <button type="submit">Estimează Prețul</button>
+    </form>
+    {% if prediction %}
+        <h2>{{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
